@@ -1,0 +1,185 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Feb  4 22:19:38 2024
+# Process ID: 3194
+# Current directory: /home/huyld/Works/counter
+# Command line: vivado
+# Log file: /home/huyld/Works/counter/vivado.log
+# Journal file: /home/huyld/Works/counter/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/huyld/Works/counter/counter.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/huyld/Works/counter/counter.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/huyld/Apps/Vivado/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/huyld/Works/counter/counter.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_counter' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/huyld/Works/counter/counter.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tb_counter_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/huyld/Works/counter/counter.srcs/sources_1/new/counter.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter
+WARNING: [VRFC 10-2502] extra semicolon in $unit (global) scope [/home/huyld/Works/counter/counter.srcs/sources_1/new/counter.sv:75]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/huyld/Works/counter/counter.srcs/sim_1/new/tb_counter.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_counter
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/huyld/Works/counter/counter.sim/sim_1/behav/xsim'
+xelab -wto c8e5efeaab3946798669b7f9d157127b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_counter_behav xil_defaultlib.tb_counter xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/huyld/Apps/Vivado/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto c8e5efeaab3946798669b7f9d157127b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_counter_behav xil_defaultlib.tb_counter xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.counter
+Compiling module xil_defaultlib.tb_counter
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_counter_behav
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /home/huyld/Works/counter/counter.sim/sim_1/behav/xsim/xsim.dir/tb_counter_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sun Feb  4 22:20:45 2024...
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/huyld/Works/counter/counter.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_counter_behav -key {Behavioral:sim_1:Functional:tb_counter} -tclbatch {tb_counter.tcl} -view {/home/huyld/Works/counter/counter.sim/tb_counter_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config /home/huyld/Works/counter/counter.sim/tb_counter_behav.wcfg
+source tb_counter.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+200	[Starting]	Enable counter at 0x0
+200	[Running ]	Counter going up  : counter = 0x0
+220	[Running ]	Counter going up  : counter = 0x1
+240	[Running ]	Counter going up  : counter = 0x2
+260	[Running ]	Counter going up  : counter = 0x3
+280	[Running ]	Counter going up  : counter = 0x4
+300	[Running ]	Counter going up  : counter = 0x5
+320	[Running ]	Counter going up  : counter = 0x6
+340	[Running ]	Counter going up  : counter = 0x7
+360	[Running ]	Counter going up  : counter = 0x8
+380	[Running ]	Counter going up  : counter = 0x9
+400	[Running ]	Counter going up  : counter = 0xa
+420	[Running ]	Counter going up  : counter = 0xb
+440	[Running ]	Counter going up  : counter = 0xc
+460	[Running ]	Counter going up  : counter = 0xd
+480	[Running ]	Counter going up  : counter = 0xe
+500	[Running ]	Counter going down: counter = 0xf
+520	[Running ]	Counter going down: counter = 0xe
+540	[Stopping]	Enable counter at 0xd
+540	[Setting ]	Set up counter at value = 0x4
+620	[Starting]	Enable counter at 0x4
+620	[Running ]	Counter going down: counter = 0x4
+640	[Running ]	Counter going down: counter = 0x3
+660	[Running ]	Counter going down: counter = 0x2
+680	[Running ]	Counter going down: counter = 0x1
+700	[Running ]	Counter going up  : counter = 0x0
+720	[Running ]	Counter going up  : counter = 0x1
+740	[Running ]	Counter going up  : counter = 0x2
+760	[Running ]	Counter going up  : counter = 0x3
+780	[Running ]	Counter going up  : counter = 0x4
+800	[Running ]	Counter going up  : counter = 0x5
+820	[Running ]	Counter going up  : counter = 0x6
+840	[Running ]	Counter going up  : counter = 0x7
+860	[Running ]	Counter going up  : counter = 0x8
+880	[Running ]	Counter going up  : counter = 0x9
+900	[Running ]	Counter going up  : counter = 0xa
+920	[Running ]	Counter going up  : counter = 0xb
+940	[Running ]	Counter going up  : counter = 0xc
+960	[Running ]	Counter going up  : counter = 0xd
+980	[Running ]	Counter going up  : counter = 0xe
+1000	[Running ]	Counter going down: counter = 0xf
+1020	[Running ]	Counter going down: counter = 0xe
+1040	[Running ]	Counter going down: counter = 0xd
+1060	[Running ]	Counter going down: counter = 0xc
+1080	[Running ]	Counter going down: counter = 0xb
+1100	[Setting ]	Set up counter at value = 0xa
+1100	[Running ]	Counter going down: counter = 0xa
+1120	[Running ]	Counter going down: counter = 0xa
+1140	[Running ]	Counter going down: counter = 0x9
+1160	[Running ]	Counter going down: counter = 0x8
+1180	[Running ]	Counter going down: counter = 0x7
+1200	[Running ]	Counter going down: counter = 0x6
+1220	[Running ]	Counter going down: counter = 0x5
+1240	[Running ]	Counter going down: counter = 0x4
+1260	[Running ]	Counter going down: counter = 0x3
+1280	[Running ]	Counter going down: counter = 0x2
+1300	[Running ]	Counter going down: counter = 0x1
+1320	[Running ]	Counter going up  : counter = 0x0
+1340	[Running ]	Counter going up  : counter = 0x1
+1360	[Running ]	Counter going up  : counter = 0x2
+1380	[Running ]	Counter going up  : counter = 0x3
+1400	[Running ]	Counter going up  : counter = 0x4
+1420	[Running ]	Counter going up  : counter = 0x5
+1440	[Running ]	Counter going up  : counter = 0x6
+1460	[Running ]	Counter going up  : counter = 0x7
+1480	[Running ]	Counter going up  : counter = 0x8
+1500	[Running ]	Counter going up  : counter = 0x9
+1520	[Running ]	Counter going up  : counter = 0xa
+1540	[Running ]	Counter going up  : counter = 0xb
+1560	[Running ]	Counter going up  : counter = 0xc
+1580	[Running ]	Counter going up  : counter = 0xd
+1600	[Running ]	Counter going up  : counter = 0xe
+1620	[Running ]	Counter going down: counter = 0xf
+1640	[Running ]	Counter going down: counter = 0xe
+1660	[Running ]	Counter going down: counter = 0xd
+1680	[Running ]	Counter going down: counter = 0xc
+1700	[Running ]	Counter going down: counter = 0xb
+1720	[Running ]	Counter going down: counter = 0xa
+1740	[Running ]	Counter going down: counter = 0x9
+1760	[Running ]	Counter going down: counter = 0x8
+1780	[Running ]	Counter going down: counter = 0x7
+1800	[Running ]	Counter going down: counter = 0x6
+1820	[Running ]	Counter going down: counter = 0x5
+1840	[Running ]	Counter going down: counter = 0x4
+1860	[Running ]	Counter going down: counter = 0x3
+1880	[Running ]	Counter going down: counter = 0x2
+1900	[Running ]	Counter going down: counter = 0x1
+1920	[Running ]	Counter going up  : counter = 0x0
+1940	[Running ]	Counter going up  : counter = 0x1
+1960	[Running ]	Counter going up  : counter = 0x2
+1980	[Running ]	Counter going up  : counter = 0x3
+2000	[Running ]	Counter going up  : counter = 0x4
+2020	[Running ]	Counter going up  : counter = 0x5
+2040	[Running ]	Counter going up  : counter = 0x6
+2060	[Running ]	Counter going up  : counter = 0x7
+2080	[Running ]	Counter going up  : counter = 0x8
+2100	[Running ]	Counter going up  : counter = 0x9
+$finish called at time : 2120 ps : File "/home/huyld/Works/counter/counter.srcs/sim_1/new/tb_counter.sv" Line 42
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_counter_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 7467.719 ; gain = 114.828 ; free physical = 18779 ; free virtual = 23710
