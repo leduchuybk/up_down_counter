@@ -28,7 +28,7 @@ module counter#(
 	assign almost_min = {WIDTH{1'b0}} + 1;
 
 	//counter
-	always_ff @(posedge clk) begin
+	always_ff @(posedge clk or negedge asyn_rstn) begin
 		if (!asyn_rstn) begin
 			count_reg <= {WIDTH{1'b0}};
 		end else begin
@@ -50,7 +50,7 @@ module counter#(
 		end
 	end
 	// up and down selector
-	always_ff @(posedge clk) begin
+	always_ff @(posedge clk or negedge asyn_rstn) begin
 		if (!asyn_rstn) begin
 			up 	 <= 1'b1;
 			down <= 1'b0;
