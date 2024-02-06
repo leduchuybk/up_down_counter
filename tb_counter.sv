@@ -36,17 +36,17 @@ module tb_counter;
 	end
 	//// enable
 	initial begin
-		#200  enb = 1'b1;
-		#340  enb = 1'b0;
-		#80   enb = 1'b1;
+		#200  enb <= 1'b1;
+		#340  enb <= 1'b0;
+		#80   enb <= 1'b1;
 		#1500 $finish;
 	end
 	//// load value in
 	initial begin
-		#540 load = 1'b1; data_in = $urandom_range (0,15);
-		#20  load = 1'b0; data_in = 4'd0;
-		#521 load = 1'b1; data_in = $urandom_range (0,15);
-		#20  load = 1'b0; data_in = 4'd0;
+		#540 load <= 1'b1; data_in <= $urandom_range (0,15);
+		#20  load <= 1'b0; data_in <= 4'd0;
+		#521 load <= 1'b1; data_in <= $urandom_range (0,15);
+		#20  load <= 1'b0; data_in <= 4'd0;
 	end
 	// design under test
 	counter #(
